@@ -141,10 +141,6 @@ resource "aws_lambda_layer_version" "pillow_layer" {
   description         = "Pillow library for image processing"
 }
 
-# ============================================================================
-# LAMBDA FUNCTION (Image Processor)
-# ============================================================================
-
 # Data source for Lambda function zip
 data "archive_file" "lambda_zip" {
   type        = "zip"
@@ -179,10 +175,7 @@ resource "aws_cloudwatch_log_group" "lambda_processor" {
   retention_in_days = 7
 }
 
-# ============================================================================
 # S3 EVENT TRIGGER
-# ============================================================================
-
 # Lambda permission to be invoked by S3
 resource "aws_lambda_permission" "allow_s3" {
   statement_id  = "AllowExecutionFromS3"

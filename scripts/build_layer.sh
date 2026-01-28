@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 echo "🚀 Building Lambda Layer with Pillow using Docker..."
 
 # Get the directory where the script is located
