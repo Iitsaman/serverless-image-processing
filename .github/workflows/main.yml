@@ -4,6 +4,14 @@ on:
   push:
     branches: [ main ]
 
+  # Allows manual triggering from the GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose deployment environment"
+        required: true
+        default: "production"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
