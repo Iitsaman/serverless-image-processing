@@ -1,4 +1,15 @@
 
+terraform {
+  backend "s3" {
+    bucket         = "my-lambs3-tfstate"
+    key            = "env/dev/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks-lambs3"
+    encrypt        = true
+  }
+}
+
+
 # Random suffix for unique resource names
 resource "random_id" "suffix" {
   byte_length = 4
