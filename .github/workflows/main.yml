@@ -3,6 +3,8 @@ name: CI/CD for Lambda Image Resizer
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
 
   # Allows manual triggering from the GitHub Actions tab
   workflow_dispatch:
