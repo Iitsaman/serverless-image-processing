@@ -47,7 +47,7 @@ jobs:
         run: |
           cd terraform
           terraform init
-          terrform plan
+          terrfaorm plan
           terraform apply -auto-approve
 
  #     - name: Deploy Lambda Code
