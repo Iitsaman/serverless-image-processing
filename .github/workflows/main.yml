@@ -37,6 +37,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Make build script executable 
+        run: chmod +x scripts/build_layer.sh
+          
       - name: Build Lambda Layer
         run: ./scripts/build_layer.sh
 
